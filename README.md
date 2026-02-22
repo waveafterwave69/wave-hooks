@@ -43,7 +43,7 @@ npm i wave-hooks
 <script setup lang="ts">
 import { useCounter } from 'wave-hooks'
 
-const { count, increment, decrement } = useCounter(10) // начальное значение 10
+const { count, increment, decrement } = useCounter(10)
 </script>
 
 <template>
