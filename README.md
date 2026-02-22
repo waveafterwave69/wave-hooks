@@ -11,7 +11,7 @@ A lightweight and powerful collection of Composition API hooks for Vue 3, design
 
 ## 👀 How to use?
 
-example
+example:
 
 ```bash
 <script setup lang="ts">
@@ -34,3 +34,7 @@ const { count, increment, decrement } = useCounter(10);
 ```bash
 npm i wave-hooks
 ```
+
+## 📄 Documentation
+
+later...
