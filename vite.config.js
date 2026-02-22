@@ -1,16 +1,20 @@
 import { resolve } from 'path'
 import { defineConfig } from 'vite'
+import dts from 'vite-plugin-dts'
 
 export default defineConfig({
+    plugins: [dts({ insertTypesEntry: true })],
     build: {
         lib: {
-            entry: resolve(__dirname, 'src/index.js'),
-            name: 'waveHooks',
-            fileName: 'wave-hooks',
+            entry: resolve(__dirname, 'src/index.ts'),
+            formats: ['es'],
         },
         rollupOptions: {
             external: ['vue'],
             output: {
+                preserveModules: true,
+                entryFileNames: '[name].js',
+                dir: 'dist',
                 globals: { vue: 'Vue' },
             },
         },
