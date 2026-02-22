@@ -15,7 +15,7 @@ example:
 
 ```bash
 <script setup lang="ts">
-import { useCounter } from 'name-of-your-lib';
+import { useCounter } from 'wave-hooks';
 
 const { count, increment, decrement } = useCounter(10);
 </script>
