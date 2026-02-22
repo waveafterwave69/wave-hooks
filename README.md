@@ -57,6 +57,9 @@ Parameters:
 
 - initialValue(Initial value of the counter) - Type: number, Default: 0
 
+-----------------------------------------------------------------------------------------
+
+
 2. useScroll - tracks the current window scroll position (window.scrollY). Automatically clears event listeners when the component is destroyed.
 
 ```bash
@@ -70,6 +73,8 @@ const { scrollValue } = useScroll()
   <p>scroll position: {{ scrollValue }}px</p>
 </template>
 ```
+-----------------------------------------------------------------------------------------
+
 
 3. useDebounce - creates a debounced version of a function. Useful for optimizing input or search handlers. Automatically resets the timer on unmount.
 
