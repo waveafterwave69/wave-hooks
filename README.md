@@ -128,4 +128,4 @@ useClickOutside(menuRef, closeMenu)
 Parameters:
 
 - el (The target element to monitor) — Type: MaybeRef<HTMLElement | null>
-- funcfunc (Function to execute when a click occurs outside) — Type: () => void
+- func (Function to execute when a click occurs outside) — Type: () => void
