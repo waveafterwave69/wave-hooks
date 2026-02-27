@@ -93,3 +93,32 @@ Parameters:
 
 - func(A function that needs to be executed with a delay) - Type: () => void
 - debounceDelay(Delay time in milliseconds) - Type: number
+
+4. useClickOutside - detects clicks outside of a specific element. Useful for closing modals, dropdowns, or sidebars.
+
+```bash
+<script setup lang="ts">
+import { ref } from 'vue'
+import { useClickOutside } from 'wave-hooks'
+
+const menuRef = ref<HTMLElement | null>(null)
+const isOpen = ref(true)
+
+const closeMenu = () => {
+  isOpen.value = false
+}
+
+useClickOutside(menuRef, closeMenu)
+</script>
+
+<template>
+  <div v-if="isOpen" ref="menuRef" class="menu">
+    <p>Click outside this box to close it!</p>
+  </div>
+</template>
+```
+
+Parameters:
+
+- el (The target element to monitor) — Type: MaybeRef<HTMLElement | null>
+- funcfunc (Function to execute when a click occurs outside) — Type: () => void
