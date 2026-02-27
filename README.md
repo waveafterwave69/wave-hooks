@@ -99,6 +99,8 @@ Parameters:
 - func(A function that needs to be executed with a delay) - Type: () => void
 - debounceDelay(Delay time in milliseconds) - Type: number
 
+-----------------------------------------------------------------------------------------
+
 4. useClickOutside - detects clicks outside of a specific element. Useful for closing modals, dropdowns, or sidebars.
 
 ```bash
