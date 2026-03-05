@@ -57,8 +57,7 @@ Parameters:
 
 - initialValue(Initial value of the counter) - Type: number, Default: 0
 
------------------------------------------------------------------------------------------
-
+---
 
 2. useScroll - tracks the current window scroll position (window.scrollY). Automatically clears event listeners when the component is destroyed.
 
@@ -73,8 +72,8 @@ const { scrollValue } = useScroll()
   <p>scroll position: {{ scrollValue }}px</p>
 </template>
 ```
------------------------------------------------------------------------------------------
 
+---
 
 3. useDebounce - creates a debounced version of a function. Useful for optimizing input or search handlers. Automatically resets the timer on unmount.
 
@@ -99,7 +98,7 @@ Parameters:
 - func(A function that needs to be executed with a delay) - Type: () => void
 - debounceDelay(Delay time in milliseconds) - Type: number
 
------------------------------------------------------------------------------------------
+---
 
 4. useClickOutside - detects clicks outside of a specific element. Useful for closing modals, dropdowns, or sidebars.
 
@@ -129,3 +128,46 @@ Parameters:
 
 - el (The target element to monitor) — Type: MaybeRef<HTMLElement | null>
 - func (Function to execute when a click occurs outside) — Type: () => void
+
+---
+
+4. useClickOutside - detects clicks outside of a specific element. Useful for closing modals, dropdowns, or sidebars.
+
+```bash
+<script setup lang="ts">
+import { useCurrentTimeUpdate } from 'wave-hooks'
+
+const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+const weekDays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+
+const {
+  hours,
+  minutes,
+  day,
+  monthName,
+  monthNumber,
+  weekDay
+} = useCurrentTimeUpdate(months, weekDays)
+</script>
+
+<template>
+  <div>
+    <h1>Current Time: {{ hours }}:{{ minutes }}</h1>
+    <p>Today is {{ weekDay }}, {{ monthName }} {{ day }} (Month №{{ monthNumber }})</p>
+  </div>
+</template>
+```
+
+Parameters:
+
+- months (An array of month names) — Type: string[]
+- weekDays (An array of weekday names, starting from Sunday) — Type: string[]
+
+Returned Values:
+
+- hours — Current hour with a leading zero (string).
+- minutes — Current minute with a leading zero (string).
+- day — Current day of the month (number).
+- monthName — Month name from the provided array (string).
+- monthNumber — Calendar month number from 1 to 12 (number).
+- weekDay — Weekday name from the provided array (string).

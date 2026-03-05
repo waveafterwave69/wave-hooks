@@ -1,6 +1,6 @@
 import { onMounted, onUnmounted, ref, type Ref } from 'vue'
 
-interface UseCurrentTimeUpdate {
+interface useCurrentDateUpdate {
     day: Ref<number | undefined>
     hours: Ref<string | undefined>
     minutes: Ref<string | undefined>
@@ -9,10 +9,10 @@ interface UseCurrentTimeUpdate {
     monthNumber: Ref<number | undefined>
 }
 
-export const useCurrentTimeUpdate = (
+export const useCurrentDateUpdate = (
     months: string[],
     weekDays: string[],
-): UseCurrentTimeUpdate => {
+): useCurrentDateUpdate => {
     const day = ref<number>()
     const hours = ref<string>()
     const minutes = ref<string>()
