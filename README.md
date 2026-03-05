@@ -131,11 +131,11 @@ Parameters:
 
 ---
 
-4. useClickOutside - detects clicks outside of a specific element. Useful for closing modals, dropdowns, or sidebars.
+5. useCurrentDateUpdate — provides reactive data for the current time and date. It automatically synchronizes with the start of the next minute and updates values in real-time.
 
 ```bash
 <script setup lang="ts">
-import { useCurrentTimeUpdate } from 'wave-hooks'
+import { useCurrentDateUpdate } from 'wave-hooks'
 
 const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 const weekDays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
@@ -147,7 +147,7 @@ const {
   monthName,
   monthNumber,
   weekDay
-} = useCurrentTimeUpdate(months, weekDays)
+} = useCurrentDateUpdate(months, weekDays)
 </script>
 
 <template>
