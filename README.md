@@ -171,3 +171,38 @@ Returned Values:
 - monthName — Month name from the provided array (string).
 - monthNumber — Calendar month number from 1 to 12 (number).
 - weekDay — Weekday name from the provided array (string).
+
+---
+
+6. useToggle — simple reactive state switcher. It allows you to toggle a boolean value or set it explicitly. Useful for modals, checkboxes, or visibility states.
+
+```bash
+<script setup lang="ts">
+import { useToggle } from 'wave-hooks'
+
+const [isVisible, toggle] = useToggle(false)
+</script>
+
+<template>
+  <div>
+    <p>Status: {{ isVisible ? 'Visible' : 'Hidden' }}</p>
+
+    <button @click="toggle()">Toggle</button>
+
+    <button @click="toggle(true)">Show</button>
+    <button @click="toggle(false)">Hide</button>
+  </div>
+</template>
+
+```
+
+Parameters:
+
+- initialValue (The starting state) — Type: boolean, Default: false
+
+Returned Values:
+
+A tuple (array) containing:
+
+- status — A reactive Ref<boolean> representing the current state.
+- toggle — A function to update the state. Accepts an optional boolean argument to set the state directly.
